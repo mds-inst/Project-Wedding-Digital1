@@ -96,6 +96,8 @@ img {
 .section-title.gold {
     color: var(--primary-gold-light);
     text-shadow: 0 2px 10px rgba(223, 193, 123, 0.2);
+    position: relative;
+    z-index: 10;
 }
 
 .section-tag {
@@ -112,6 +114,8 @@ img {
     text-transform: uppercase;
     color: var(--primary-gold);
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 .title-divider {
@@ -121,6 +125,8 @@ img {
     gap: 12px;
     margin: 0.75rem auto 2.25rem;
     width: 160px;
+    position: relative;
+    z-index: 10;
 }
 
 .title-divider .line {
@@ -609,7 +615,7 @@ img {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 0.6s ease;
+    transition: transform 1.2s ease;
 }
 
 .photo-frame:hover .mempelai-img {
@@ -690,6 +696,12 @@ img {
     background-size: cover;
     background-position: center;
     z-index: 1;
+    animation: kenBurnsZoom 25s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurnsZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); }
 }
 
 .std-overlay {
@@ -902,6 +914,12 @@ img {
     font-size: 3rem;
     color: #ff0000;
     margin-bottom: 1rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
 .streaming-desc {
@@ -927,8 +945,8 @@ img {
 
 .btn-youtube:hover {
     background: #cc0000;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.45);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.5);
 }
 
 /* --------------------------------------------------------------------------
@@ -941,11 +959,15 @@ img {
     overflow: hidden;
 }
 
+.section-love-story .container {
+    position: relative;
+    z-index: 10;
+}
+
 .timeline {
     position: relative;
-    max-width: 650px;
+    max-width: 900px;
     margin: 2rem auto 0;
-    padding-left: 20px;
     z-index: 10;
 }
 
@@ -954,35 +976,53 @@ img {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 8px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 2px;
     background: linear-gradient(180deg, var(--primary-gold), transparent);
+    z-index: 1;
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 2.5rem;
-    text-align: left;
+    margin-bottom: 3rem;
+    display: flex;
+    width: 100%;
+    z-index: 10;
+}
+
+.timeline-item.timeline-left {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.timeline-item.timeline-right {
+    justify-content: flex-start;
 }
 
 .timeline-dot {
-    position: absolute;
-    left: -20px;
-    top: 4px;
+    position: relative;
     width: 14px;
     height: 14px;
     border-radius: 50%;
     background: var(--primary-gold);
     border: 3px solid var(--bg-dark);
     box-shadow: 0 0 10px var(--primary-gold);
+    flex-shrink: 0;
+    margin: 0 2rem;
+    top: 25px;
+    z-index: 5;
 }
 
 .timeline-content {
     background: var(--bg-dark-card);
     border: 1px solid rgba(223, 193, 123, 0.2);
     border-radius: 12px;
-    padding: 1.25rem 1.5rem;
-    margin-left: 15px;
+    padding: 1.5rem;
+    width: calc(50% - 30px);
+    text-align: left;
+    position: relative;
+    z-index: 10;
 }
 
 .timeline-date {
@@ -991,17 +1031,19 @@ img {
     color: var(--primary-gold);
     font-weight: 600;
     text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 .timeline-title {
     font-family: var(--font-serif);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--text-light);
-    margin: 0.2rem 0 0.5rem;
+    margin: 0.3rem 0 0.8rem;
 }
 
 .timeline-text {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     color: var(--text-light-muted);
     line-height: 1.6;
 }
@@ -1297,6 +1339,31 @@ img {
 /* --------------------------------------------------------------------------
    18. RESPONSIVE BREAKPOINTS (DESKTOP & TABLET)
    -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-item {
+        flex-direction: column !important;
+        width: 100%;
+        padding-left: 50px;
+        margin-bottom: 2rem;
+    }
+
+    .timeline-dot {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        margin: 0;
+    }
+
+    .timeline-content {
+        width: 100%;
+        margin: 0;
+    }
+}
+
 @media (min-width: 640px) {
     .countdown-item {
         width: 90px;
@@ -1344,39 +1411,14 @@ img {
         grid-template-columns: 1fr 1fr;
     }
 
-    .timeline {
-        padding-left: 0;
-    }
-
-    .timeline::before {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
     .timeline-item {
-        width: 50%;
-        padding-right: 30px;
-    }
-
-    .timeline-item:nth-child(even) {
-        margin-left: 50%;
-        padding-right: 0;
-        padding-left: 30px;
-    }
-
-    .timeline-dot {
-        left: auto;
-        right: -7px;
-    }
-
-    .timeline-item:nth-child(even) .timeline-dot {
-        right: auto;
-        left: -7px;
+        margin-bottom: 4rem;
     }
 
     .timeline-content {
-        margin-left: 0;
+        width: calc(50% - 40px);
     }
+}
 }
 
 @media (min-width: 1024px) {
