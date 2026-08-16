@@ -54,12 +54,7 @@
 
             <p class="wedding-date animate-fade-in delay-3">12 September 2026</p>
 
-            <div class="guest-card animate-fade-in delay-4">
-                <p class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-                <h2 class="guest-name" id="guest-name">Nama Tamu</h2>
-            </div>
-
-            <div class="btn-container animate-fade-in delay-5">
+            <div class="btn-container animate-fade-in delay-4">
                 <button type="button" class="btn-open-undangan" id="btn-open" aria-label="Buka Undangan Pernikahan">
                     <i class="fa-regular fa-envelope-open btn-icon"></i>
                     <span>BUKA UNDANGAN</span>
@@ -144,6 +139,12 @@
             
             <!-- Groom Card (Slide Left to Right) -->
             <div class="mempelai-block groom-block">
+                <div class="video-bg-container">
+                    <video class="video-bg" autoplay muted loop playsinline poster="asset/images/cover.jpg">
+                        <source src="asset/video/Video Project-1.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-overlay" style="background: radial-gradient(circle at center, rgba(11, 15, 25, 0.75) 0%, rgba(11, 15, 25, 0.92) 100%);"></div>
+                </div>
                 <div class="container">
                     <div class="mempelai-grid reverse">
                         <div class="mempelai-photo-wrapper reveal slide-left">
@@ -165,6 +166,12 @@
 
             <!-- Bride Card (Background Putih, Slide Right to Left) -->
             <div class="mempelai-block bride-block section-white">
+                <div class="video-bg-container">
+                    <video class="video-bg" autoplay muted loop playsinline poster="asset/images/cover.jpg">
+                        <source src="asset/video/Video Project-1.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-overlay" style="background: radial-gradient(circle at center, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.95) 100%);"></div>
+                </div>
                 <div class="container">
                     <div class="mempelai-grid">
                         <div class="mempelai-info reveal">
@@ -251,8 +258,8 @@
                         <!-- Photo Slider Akad (foto-6 & foto-7) -->
                         <div class="carousel-container" id="carousel-akad">
                             <div class="carousel-track">
-                                <div class="carousel-slide active"><img src="asset/images/foto-6.jpeg" alt="Foto Akad 1"></div>
-                                <div class="carousel-slide"><img src="asset/images/foto-7.jpeg" alt="Foto Akad 2"></div>
+                                <div class="carousel-slide active"><img src="asset/images/foto-6.jpeg" alt="Foto Akad 1" style="object-fit: cover;"></div>
+                                <div class="carousel-slide"><img src="asset/images/foto-7.jpeg" alt="Foto Akad 2" style="object-fit: cover;"></div>
                             </div>
                             <button class="carousel-btn prev-btn" aria-label="Previous Photo"><i class="fa-solid fa-chevron-left"></i></button>
                             <button class="carousel-btn next-btn" aria-label="Next Photo"><i class="fa-solid fa-chevron-right"></i></button>
@@ -348,6 +355,12 @@
              10. LOVE STORY SECTION
              ========================================== -->
         <section class="section-dark section-love-story" id="love-story">
+            <div class="video-bg-container">
+                <video class="video-bg" autoplay muted loop playsinline poster="asset/images/cover.jpg">
+                    <source src="asset/video/Video Project-1.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
             <div class="container reveal">
                 <h2 class="section-title gold">KISAH KAMI</h2>
                 <p class="section-tag-gold">Perjalanan Cinta Yasa &amp; Nina</p>
@@ -407,12 +420,12 @@
 
                 <div class="bank-card-container">
                     <div class="bank-card reveal">
-                        <div class="bank-logo">BANK PANIN</div>
+                        <div class="bank-logo">SEABANK</div>
                         <div class="bank-chip"><i class="fa-solid fa-microchip"></i></div>
-                        <div class="bank-number" id="bank-number">8830192837</div>
+                        <div class="bank-number" id="bank-number">901150848441</div>
                         <div class="bank-holder">
                             <span>Atas Nama:</span>
-                            <strong id="bank-name">Nina Prihartini</strong>
+                            <strong id="bank-name">Nina Prihatini</strong>
                         </div>
                         <button type="button" class="btn-copy" id="btn-copy-rekening">
                             <i class="fa-regular fa-copy"></i> Salin No. Rekening

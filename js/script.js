@@ -15,9 +15,9 @@ const CONFIG = {
     
     // Bank Account Details
     bankInfo: {
-        bankName: "Bank Panin",
-        accountNumber: "8830192837",
-        accountName: "Nina Prihartini"
+        bankName: "SEABANK",
+        accountNumber: "901150848441",
+        accountName: "Nina Prihatini"
     }
 };
 

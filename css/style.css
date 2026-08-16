@@ -576,6 +576,8 @@ img {
 
 .mempelai-block {
     padding: 5rem 1.5rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .mempelai-grid {
@@ -583,6 +585,8 @@ img {
     grid-template-columns: 1fr;
     gap: 2.5rem;
     align-items: center;
+    position: relative;
+    z-index: 10;
 }
 
 .mempelai-photo-wrapper {
@@ -808,7 +812,8 @@ img {
 .carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center;
 }
 
 .carousel-btn {
@@ -932,6 +937,8 @@ img {
 .section-love-story {
     padding: 5rem 1.5rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .timeline {
@@ -939,6 +946,7 @@ img {
     max-width: 650px;
     margin: 2rem auto 0;
     padding-left: 20px;
+    z-index: 10;
 }
 
 .timeline::before {
@@ -1130,6 +1138,7 @@ img {
     background-size: cover;
     background-position: center;
     z-index: 1;
+    transform: scale(1.2);
 }
 
 .closing-overlay {
