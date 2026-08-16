@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Digital - Yasa & Nina</title>
+
+    <!-- Meta SEO & Social -->
+    <meta name="description" content="Undangan Pernikahan Digital Yasa Erdiansyah & Nina Prihartini - 12 September 2026">
+    <meta property="og:title" content="Undangan Pernikahan Yasa & Nina">
+    <meta property="og:description" content="Kami mengundang Anda untuk merayakan kebahagiaan dalam acara pernikahan kami.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         1. COVER / OPENING SECTION (FULLSCREEN)
+         ========================================== -->
+    <section class="cover-wrapper" id="cover-section">
+        <div class="cover-bg"></div>
+        <div class="cover-overlay"></div>
+
+        <div class="frame-border">
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-tr"></div>
+            <div class="corner corner-bl"></div>
+            <div class="corner corner-br"></div>
+        </div>
+
+        <div class="cover-content">
+            <p class="subtitle animate-fade-in delay-1">THE WEDDING OF</p>
+            <h1 class="couple-names animate-fade-in delay-2">
+                <span class="name-groom">Yasa</span>
+                <span class="ampersand">&amp;</span>
+                <span class="name-bride">Nina</span>
+            </h1>
+
+            <div class="divider animate-fade-in delay-3">
+                <span class="divider-line"></span>
+                <span class="divider-diamond">◆</span>
+                <span class="divider-line"></span>
+            </div>
+
+            <p class="wedding-date animate-fade-in delay-3">12 September 2026</p>
+
+            <div class="guest-card animate-fade-in delay-4">
+                <p class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+                <h2 class="guest-name" id="guest-name">Nama Tamu</h2>
+            </div>
+
+            <div class="btn-container animate-fade-in delay-5">
+                <button type="button" class="btn-open-undangan" id="btn-open" aria-label="Buka Undangan Pernikahan">
+                    <i class="fa-regular fa-envelope-open btn-icon"></i>
+                    <span>BUKA UNDANGAN</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Background Audio Element -->
+    <audio id="bg-audio" loop preload="auto">
+        <source src="asset/mussic/musik.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Floating Audio Control Button -->
+    <button type="button" class="audio-control-btn" id="audio-toggle" aria-label="Toggle Audio Player">
+        <i class="fa-solid fa-compact-disc audio-icon spinning"></i>
+    </button>
+
+    <!-- MAIN UNLOCKED CONTENT WRAPPER -->
+    <div class="main-content-wrapper" id="main-content">
+
+        <!-- ==========================================
+             3. WEDDING OF SECTION (VIDEO BACKGROUND)
+             ========================================== -->
+        <section class="section-hero" id="wedding-of">
+            <div class="video-bg-container">
+                <video class="video-bg" autoplay muted loop playsinline poster="asset/images/cover.jpg">
+                    <source src="asset/video/Video Project-1.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+
+            <div class="hero-content reveal">
+                <p class="section-tag">WELCOME TO OUR WEDDING</p>
+                <h2 class="hero-title">THE WEDDING OF</h2>
+                <div class="hero-names">Yasa &amp; Nina</div>
+                <p class="hero-date"><i class="fa-regular fa-calendar-check"></i> Sabtu, 12 September 2026</p>
+                <div class="scroll-indicator">
+                    <span>Gulir ke Bawah</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             4. AYAT SECTION (BACKGROUND PUTIH)
+             ========================================== -->
+        <section class="section-white section-ayat" id="ayat">
+            <div class="container">
+                <div class="ayat-card reveal">
+                    <div class="bismillah-img">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+                    <blockquote class="quran-quote">
+                        &ldquo;Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.&rdquo;
+                    </blockquote>
+                    <p class="quran-source">&mdash; QS. Ar-Rum Ayat 21 &mdash;</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             5. SAMBUTAN SECTION (BACKGROUND PUTIH)
+             ========================================== -->
+        <section class="section-white section-sambutan" id="sambutan">
+            <div class="container">
+                <div class="sambutan-card reveal">
+                    <h3 class="section-subtitle">Assalamu’alaikum Warahmatullahi Wabarakatuh</h3>
+                    <div class="title-divider"><span class="line"></span><span class="star">✦</span><span class="line"></span></div>
+                    <p class="sambutan-text">
+                        Maha Suci Allah SWT yang telah menciptakan makhluk-Nya berpasang-pasangan. Dengan memohon rahmat dan ridho-Nya, kami bermaksud menyelenggarakan acara pernikahan putra-putri kami:
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             6. MEMPELAI SECTION (SLIDE ANIMATION)
+             ========================================== -->
+        <section class="section-mempelai" id="mempelai">
+            
+            <!-- Groom Card (Slide Left to Right) -->
+            <div class="mempelai-block groom-block">
+                <div class="container">
+                    <div class="mempelai-grid reverse">
+                        <div class="mempelai-photo-wrapper reveal slide-left">
+                            <div class="photo-frame">
+                                <img src="asset/images/foto-1.JPEG" alt="Foto Yasa Erdiansyah" class="mempelai-img">
+                            </div>
+                        </div>
+                        <div class="mempelai-info reveal">
+                            <span class="mempelai-role">MEMPELAI PRIA</span>
+                            <h2 class="mempelai-name">Yasa Erdiansyah</h2>
+                            <div class="parent-info">
+                                <p>Putra pertama dari</p>
+                                <p class="parent-names">Bpk. Hendri (Alm) &amp; Ibu Diah</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bride Card (Background Putih, Slide Right to Left) -->
+            <div class="mempelai-block bride-block section-white">
+                <div class="container">
+                    <div class="mempelai-grid">
+                        <div class="mempelai-info reveal">
+                            <span class="mempelai-role">MEMPELAI WANITA</span>
+                            <h2 class="mempelai-name">Nina Prihartini</h2>
+                            <div class="parent-info">
+                                <p>Putri ke-3 dari</p>
+                                <p class="parent-names">Bpk. Jumat (Alm), Bpk. Anda (Japar) &amp; Ibu Nani</p>
+                            </div>
+                        </div>
+                        <div class="mempelai-photo-wrapper reveal slide-right">
+                            <div class="photo-frame">
+                                <img src="asset/images/foto-2.JPEG" alt="Foto Nina Prihartini" class="mempelai-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             7. SAVE THE DATE SECTION
+             ========================================== -->
+        <section class="section-std" id="save-the-date">
+            <div class="std-bg"></div>
+            <div class="std-overlay"></div>
+
+            <div class="container std-content reveal">
+                <h2 class="section-title gold">SAVE THE DATE</h2>
+                <div class="title-divider"><span class="line"></span><span class="star">✦</span><span class="line"></span></div>
+                <p class="std-date-text">Sabtu, 12 September 2026</p>
+
+                <!-- Countdown Timer -->
+                <div class="countdown-container" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="cd-days">00</span>
+                        <span class="countdown-label">Hari</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="cd-hours">00</span>
+                        <span class="countdown-label">Jam</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="cd-minutes">00</span>
+                        <span class="countdown-label">Menit</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="cd-seconds">00</span>
+                        <span class="countdown-label">Detik</span>
+                    </div>
+                </div>
+
+                <div class="calendar-action">
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Yasa+%26+Nina&dates=20260912T020000Z/20260912T060000Z&details=Acara+Pernikahan+Yasa+Erdiansyah+%26+Nina+Prihartini&location=Jl.+Hj.+Mubarak,+Posyandu+RT05/RW07,+Kotabatu,+Ciomas,+Bogor" target="_blank" rel="noopener noreferrer" class="btn-gold">
+                        <i class="fa-regular fa-calendar-plus"></i> Simpan Tanggal
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             8. WEDDING EVENT SECTION (VIDEO BACKGROUND)
+             ========================================== -->
+        <section class="section-event" id="wedding-event">
+            <div class="video-bg-container">
+                <video class="video-bg" autoplay muted loop playsinline poster="asset/images/cover.jpg">
+                    <source src="asset/video/Video Project-1.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+
+            <div class="container event-content reveal">
+                <h2 class="section-title gold">RANGKAIAN ACARA</h2>
+                <p class="section-tag-gold">Waktu &amp; Tempat Pelaksanaan</p>
+                <div class="title-divider"><span class="line"></span><span class="star">✦</span><span class="line"></span></div>
+
+                <div class="events-grid">
+                    
+                    <!-- AKAD CARD -->
+                    <div class="event-card reveal">
+                        <!-- Photo Slider Akad (foto-6 & foto-7) -->
+                        <div class="carousel-container" id="carousel-akad">
+                            <div class="carousel-track">
+                                <div class="carousel-slide active"><img src="asset/images/foto-6.jpeg" alt="Foto Akad 1"></div>
+                                <div class="carousel-slide"><img src="asset/images/foto-7.jpeg" alt="Foto Akad 2"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn" aria-label="Previous Photo"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn" aria-label="Next Photo"><i class="fa-solid fa-chevron-right"></i></button>
+                            <div class="carousel-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+
+                        <div class="event-details">
+                            <h3 class="event-type">AKAD NIKAH</h3>
+                            <div class="event-info-item">
+                                <i class="fa-regular fa-calendar"></i>
+                                <span>Sabtu, 12 September 2026</span>
+                            </div>
+                            <div class="event-info-item">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Pukul 09.00 WIB - Selesai</span>
+                            </div>
+                            <div class="event-info-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Jl. Hj. Mubarak, Posyandu RT05/RW07, Kotabatu, Ciomas, Bogor</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RESEPSI CARD -->
+                    <div class="event-card reveal">
+                        <!-- Photo Slider Resepsi (foto-4 & foto-5) -->
+                        <div class="carousel-container" id="carousel-resepsi">
+                            <div class="carousel-track">
+                                <div class="carousel-slide active"><img src="asset/images/foto-4.jpeg" alt="Foto Resepsi 1"></div>
+                                <div class="carousel-slide"><img src="asset/images/foto-5.jpeg" alt="Foto Resepsi 2"></div>
+                            </div>
+                            <button class="carousel-btn prev-btn" aria-label="Previous Photo"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn" aria-label="Next Photo"><i class="fa-solid fa-chevron-right"></i></button>
+                            <div class="carousel-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+
+                        <div class="event-details">
+                            <h3 class="event-type">RESEPSI PERNIKAHAN</h3>
+                            <div class="event-info-item">
+                                <i class="fa-regular fa-calendar"></i>
+                                <span>Sabtu, 12 September 2026</span>
+                            </div>
+                            <div class="event-info-item">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>Pukul 11.00 WIB - Selesai</span>
+                            </div>
+                            <div class="event-info-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Jl. Hj. Mubarak, Posyandu RT05/RW07, Kotabatu, Ciomas, Bogor</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Google Maps Direction Button -->
+                <div class="maps-action reveal">
+                    <a href="https://maps.google.com/?q=Jl.+Hj.+Mubarak,+Posyandu+RT05/RW07,+Kotabatu,+Ciomas,+Bogor" target="_blank" rel="noopener noreferrer" class="btn-gold btn-large">
+                        <i class="fa-solid fa-map-location-dot"></i> Petunjuk Lokasi (Google Maps)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             9. LIVE STREAMING SECTION
+             ========================================== -->
+        <section class="section-dark section-streaming" id="live-streaming">
+            <div class="container reveal">
+                <div class="streaming-card">
+                    <div class="streaming-icon"><i class="fa-brands fa-youtube"></i></div>
+                    <h2 class="section-title gold">LIVE STREAMING</h2>
+                    <p class="streaming-desc">
+                        Bagi keluarga dan kerabat yang berhalangan hadir secara langsung, Anda dapat menyaksikan momen bahagia kami melalui siaran langsung YouTube.
+                    </p>
+                    <a href="#" id="youtube-btn" target="_blank" rel="noopener noreferrer" class="btn-youtube">
+                        <i class="fa-brands fa-youtube"></i> Tonton di YouTube
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             10. LOVE STORY SECTION
+             ========================================== -->
+        <section class="section-dark section-love-story" id="love-story">
+            <div class="container reveal">
+                <h2 class="section-title gold">KISAH KAMI</h2>
+                <p class="section-tag-gold">Perjalanan Cinta Yasa &amp; Nina</p>
+                <div class="title-divider"><span class="line"></span><span class="star">✦</span><span class="line"></span></div>
+
+                <div class="timeline">
+                    <!-- Story 1 -->
+                    <div class="timeline-item reveal slide-left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Awal Pertemuan</span>
+                            <h3 class="timeline-title">Pertama Kali Bertemu</h3>
+                            <p class="timeline-text">
+                                Berawal dari perkenalan sederhana yang membawa rasa nyaman dan hangat. Takdir perlahan merajut cerita indah antara kami berdua.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Story 2 -->
+                    <div class="timeline-item reveal slide-right">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Komitmen Bersama</span>
+                            <h3 class="timeline-title">Mengikat Janji Suci</h3>
+                            <p class="timeline-text">
+                                Setelah melewati perjalanan dan berbagai cerita bersama, kami memutuskan untuk melangkah ke jenjang yang lebih serius dengan niat dan tekad bulat.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Story 3 -->
+                    <div class="timeline-item reveal slide-left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">12 September 2026</span>
+                            <h3 class="timeline-title">Menuju Pernikahan</h3>
+                            <p class="timeline-text">
+                                Hari yang paling dinantikan, di mana kami menyatukan dua insan dalam ikatan pernikahan yang suci dan penuh berkah.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             11. KIRIM HADIAH SECTION
+             ========================================== -->
+        <section class="section-dark section-hadiah" id="kirim-hadiah">
+            <div class="container reveal">
+                <h2 class="section-title gold">KIRIM HADIAH</h2>
+                <p class="hadiah-desc">
+                    Doa restu Anda merupakan hadiah terindah bagi kami. Namun jika Anda ingin memberikan tanda kasih, Anda dapat menyalurkannya melalui rekening berikut:
+                </p>
+                <div class="title-divider"><span class="line"></span><span class="star">✦</span><span class="line"></span></div>
+
+                <div class="bank-card-container">
+                    <div class="bank-card reveal">
+                        <div class="bank-logo">BANK PANIN</div>
+                        <div class="bank-chip"><i class="fa-solid fa-microchip"></i></div>
+                        <div class="bank-number" id="bank-number">8830192837</div>
+                        <div class="bank-holder">
+                            <span>Atas Nama:</span>
+                            <strong id="bank-name">Nina Prihartini</strong>
+                        </div>
+                        <button type="button" class="btn-copy" id="btn-copy-rekening">
+                            <i class="fa-regular fa-copy"></i> Salin No. Rekening
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             12. CLOSING SECTION
+             ========================================== -->
+        <footer class="section-closing" id="closing">
+            <div class="closing-bg"></div>
+            <div class="closing-overlay"></div>
+
+            <div class="container closing-content reveal">
+                <p class="closing-text">
+                    Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami.
+                </p>
+                <p class="closing-thanks">
+                    Wassalamu’alaikum Warahmatullahi Wabarakatuh
+                </p>
+                <div class="closing-signature">
+                    <span class="sig-groom">Yasa</span>
+                    <span class="sig-amp">&amp;</span>
+                    <span class="sig-bride">Nina</span>
+                </div>
+                <p class="copyright">&copy; 2026 Yasa &amp; Nina Wedding Invitation</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Toast Notification for Copying Bank Account -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-circle-check"></i> Nomor Rekening Berhasil Disalin!
+    </div>
+
+    <!-- JS -->
+    <script src="js/script.js" defer></script>
+</body>
+</html>

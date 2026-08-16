@@ -1,0 +1,1381 @@
+/* ==========================================================================
+   DIGITAL WEDDING INVITATION - FULL CINEMATIC STYLESHEET
+   Yasa Erdiansyah & Nina Prihartini | 12 September 2026
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. COLOR PALETTE & VARIABLES
+   -------------------------------------------------------------------------- */
+:root {
+    --primary-gold: #dfc17b;
+    --primary-gold-light: #f7e6bb;
+    --primary-gold-dark: #b8974a;
+    --gold-gradient: linear-gradient(135deg, #f7e6bb 0%, #dfc17b 50%, #a68436 100%);
+    
+    --bg-dark: #0b0e14;
+    --bg-dark-card: #131924;
+    --bg-white: #ffffff;
+    
+    --text-dark: #1e293b;
+    --text-dark-muted: #64748b;
+    --text-light: #ffffff;
+    --text-light-muted: #cbd5e1;
+    --text-gold: #e5cd8d;
+    
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-script: 'Alex Brush', cursive;
+    --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & GLOBAL STYLES
+   -------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. TYPOGRAPHY & DECORATION UTILITIES
+   -------------------------------------------------------------------------- */
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.25rem;
+}
+
+.section-title.gold {
+    color: var(--primary-gold-light);
+    text-shadow: 0 2px 10px rgba(223, 193, 123, 0.2);
+}
+
+.section-tag {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-light-muted);
+    text-align: center;
+}
+
+.section-tag-gold {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--primary-gold);
+    text-align: center;
+}
+
+.title-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0.75rem auto 2.25rem;
+    width: 160px;
+}
+
+.title-divider .line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+}
+
+.title-divider .star {
+    font-size: 0.7rem;
+    color: var(--primary-gold);
+}
+
+/* Common Gold Button */
+.btn-gold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.8rem;
+    background: var(--gold-gradient);
+    color: #111622;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(223, 193, 123, 0.3);
+    transition: all 0.3s var(--transition-smooth);
+}
+
+.btn-gold:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(223, 193, 123, 0.45);
+}
+
+.btn-gold.btn-large {
+    padding: 1rem 2.2rem;
+    font-size: 0.92rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. COVER / OPENING SECTION
+   -------------------------------------------------------------------------- */
+.cover-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.25rem;
+    overflow: hidden;
+    transition: opacity 0.8s ease, transform 0.8s ease, visibility 0.8s ease;
+}
+
+.cover-wrapper.opened {
+    opacity: 0;
+    transform: scale(1.04);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.cover-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('../asset/images/cover.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    animation: kenBurns 25s ease-in-out infinite alternate;
+}
+
+.cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(15, 23, 42, 0.45) 0%, rgba(11, 15, 25, 0.88) 100%);
+    backdrop-filter: blur(2px);
+    z-index: 2;
+}
+
+.frame-border {
+    position: absolute;
+    inset: 1.25rem;
+    border: 1px solid rgba(223, 193, 123, 0.3);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.corner {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-color: var(--primary-gold);
+    border-style: solid;
+}
+
+.corner-tl { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
+.corner-tr { top: -2px; right: -2px; border-width: 2px 2px 0 0; }
+.corner-bl { bottom: -2px; left: -2px; border-width: 0 0 2px 2px; }
+.corner-br { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
+
+.cover-content {
+    position: relative;
+    z-index: 10;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subtitle {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    color: var(--text-gold);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.couple-names {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.name-groom, .name-bride {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--text-light);
+}
+
+.ampersand {
+    font-family: var(--font-script);
+    font-size: 2.8rem;
+    color: var(--primary-gold-light);
+    margin: -0.25rem 0;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    margin: 0.5rem 0 1rem;
+    gap: 10px;
+}
+
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+}
+
+.divider-diamond {
+    font-size: 0.5rem;
+    color: var(--primary-gold);
+}
+
+.wedding-date {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    letter-spacing: 0.15em;
+    color: var(--text-light-muted);
+    margin-bottom: 2rem;
+}
+
+.guest-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(223, 193, 123, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    width: 100%;
+    max-width: 380px;
+    margin-bottom: 2.25rem;
+}
+
+.guest-label {
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: var(--text-light-muted);
+    margin-bottom: 0.4rem;
+}
+
+.guest-name {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-gold-light);
+}
+
+.btn-open-undangan {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 2.2rem;
+    background: var(--gold-gradient);
+    color: #111622;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(223, 193, 123, 0.35);
+    transition: all 0.35s var(--transition-smooth);
+}
+
+.btn-open-undangan:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(223, 193, 123, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   5. FLOATING AUDIO CONTROL BUTTON
+   -------------------------------------------------------------------------- */
+.audio-control-btn {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(19, 25, 36, 0.85);
+    border: 1px solid var(--primary-gold);
+    color: var(--primary-gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 900;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.audio-control-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.audio-control-btn:hover {
+    transform: scale(1.1);
+}
+
+.spinning {
+    animation: rotateDisc 4s linear infinite;
+}
+
+.paused .spinning {
+    animation-play-state: paused;
+}
+
+@keyframes rotateDisc {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* --------------------------------------------------------------------------
+   6. MAIN UNLOCKED CONTENT WRAPPER
+   -------------------------------------------------------------------------- */
+.main-content-wrapper {
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+    display: none;
+}
+
+.main-content-wrapper.unlocked {
+    opacity: 1;
+    pointer-events: auto;
+    display: block;
+}
+
+/* --------------------------------------------------------------------------
+   7. VIDEO BACKGROUND CONTAINERS
+   -------------------------------------------------------------------------- */
+.video-bg-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(11, 15, 25, 0.55) 0%, rgba(11, 15, 25, 0.88) 100%);
+    z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   8. SECTION 3: WEDDING OF (HERO)
+   -------------------------------------------------------------------------- */
+.section-hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 1.5rem;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 600px;
+}
+
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    letter-spacing: 0.1em;
+    color: var(--primary-gold-light);
+    margin: 0.5rem 0;
+}
+
+.hero-names {
+    font-family: var(--font-script);
+    font-size: 4rem;
+    color: var(--primary-gold);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.hero-date {
+    font-size: 0.95rem;
+    color: var(--text-light-muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 3rem;
+}
+
+.scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--primary-gold-light);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-8px); }
+    60% { transform: translateY(-4px); }
+}
+
+/* --------------------------------------------------------------------------
+   9. WHITE BACKGROUND SECTIONS (AYAT, SAMBUTAN, BRIDE)
+   -------------------------------------------------------------------------- */
+.section-white {
+    background-color: var(--bg-white) !important;
+    color: var(--text-dark) !important;
+    position: relative;
+    z-index: 10;
+}
+
+/* SECTION 4: AYAT */
+.section-ayat {
+    padding: 5rem 1.5rem;
+    text-align: center;
+}
+
+.ayat-card {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.bismillah-img {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--primary-gold-dark);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+}
+
+.quran-quote {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #334155;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.quran-source {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-gold-dark);
+    letter-spacing: 0.15em;
+}
+
+/* SECTION 5: SAMBUTAN */
+.section-sambutan {
+    padding: 4rem 1.5rem 5rem;
+    text-align: center;
+}
+
+.sambutan-card {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+}
+
+.sambutan-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #475569;
+}
+
+/* --------------------------------------------------------------------------
+   10. SECTION 6: MEMPELAI
+   -------------------------------------------------------------------------- */
+.section-mempelai {
+    position: relative;
+    z-index: 10;
+}
+
+.mempelai-block {
+    padding: 5rem 1.5rem;
+}
+
+.mempelai-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.mempelai-photo-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.photo-frame {
+    width: 240px;
+    height: 310px;
+    border-radius: 120px 120px 20px 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 4px solid var(--primary-gold);
+    position: relative;
+}
+
+.mempelai-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s ease;
+}
+
+.photo-frame:hover .mempelai-img {
+    transform: scale(1.05);
+}
+
+.mempelai-info {
+    text-align: center;
+}
+
+.mempelai-role {
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    color: var(--primary-gold-dark);
+    font-weight: 600;
+}
+
+.groom-block .mempelai-role {
+    color: var(--primary-gold-light);
+}
+
+.mempelai-name {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin: 0.3rem 0 1rem;
+}
+
+.groom-block .mempelai-name {
+    color: var(--text-light);
+}
+
+.bride-block .mempelai-name {
+    color: var(--text-dark);
+}
+
+.parent-info {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.groom-block .parent-info {
+    color: var(--text-light-muted);
+}
+
+.bride-block .parent-info {
+    color: var(--text-dark-muted);
+}
+
+.parent-names {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+}
+
+.groom-block .parent-names {
+    color: var(--primary-gold-light);
+}
+
+.bride-block .parent-names {
+    color: #0f172a;
+}
+
+/* --------------------------------------------------------------------------
+   11. SECTION 7: SAVE THE DATE
+   -------------------------------------------------------------------------- */
+.section-std {
+    position: relative;
+    padding: 6rem 1.5rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.std-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('../asset/images/foto-3.jpeg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.std-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 15, 25, 0.82);
+    backdrop-filter: blur(3px);
+    z-index: 2;
+}
+
+.std-content {
+    position: relative;
+    z-index: 10;
+}
+
+.std-date-text {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--text-light-muted);
+    letter-spacing: 0.1em;
+    margin-bottom: 2.5rem;
+}
+
+/* Countdown */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(223, 193, 123, 0.3);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    width: 75px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.countdown-value {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-gold-light);
+    line-height: 1;
+}
+
+.countdown-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light-muted);
+    margin-top: 0.4rem;
+}
+
+/* --------------------------------------------------------------------------
+   12. SECTION 8: WEDDING EVENT
+   -------------------------------------------------------------------------- */
+.section-event {
+    position: relative;
+    padding: 6rem 1.5rem;
+    text-align: center;
+}
+
+.event-content {
+    position: relative;
+    z-index: 10;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 3.5rem;
+}
+
+.event-card {
+    background: rgba(19, 25, 36, 0.85);
+    border: 1px solid rgba(223, 193, 123, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    text-align: left;
+}
+
+/* Photo Carousel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 6 / 8;
+    overflow: hidden;
+    background: #000;
+}
+
+.carousel-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.carousel-btn {
+    display: none;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 5;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dot.active {
+    background: var(--primary-gold);
+    width: 20px;
+    border-radius: 10px;
+}
+
+/* Event Details */
+.event-details {
+    padding: 1.8rem 1.5rem;
+}
+
+.event-type {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--primary-gold-light);
+    margin-bottom: 1.2rem;
+    border-bottom: 1px dashed rgba(223, 193, 123, 0.3);
+    padding-bottom: 0.6rem;
+}
+
+.event-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    color: var(--text-light-muted);
+}
+
+.event-info-item i {
+    color: var(--primary-gold);
+    margin-top: 0.2rem;
+    font-size: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   13. SECTION 9: LIVE STREAMING
+   -------------------------------------------------------------------------- */
+.section-dark {
+    background-color: var(--bg-dark);
+    position: relative;
+    z-index: 10;
+}
+
+.section-streaming {
+    padding: 5rem 1.5rem;
+    text-align: center;
+}
+
+.streaming-card {
+    background: var(--bg-dark-card);
+    border: 1px solid rgba(223, 193, 123, 0.25);
+    border-radius: 16px;
+    padding: 2.5rem 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-card);
+}
+
+.streaming-icon {
+    font-size: 3rem;
+    color: #ff0000;
+    margin-bottom: 1rem;
+}
+
+.streaming-desc {
+    font-size: 0.9rem;
+    color: var(--text-light-muted);
+    margin: 1rem 0 2rem;
+    line-height: 1.7;
+}
+
+.btn-youtube {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 2rem;
+    background: #ff0000;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-youtube:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.45);
+}
+
+/* --------------------------------------------------------------------------
+   14. SECTION 10: LOVE STORY
+   -------------------------------------------------------------------------- */
+.section-love-story {
+    padding: 5rem 1.5rem;
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    max-width: 650px;
+    margin: 2rem auto 0;
+    padding-left: 20px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 8px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary-gold), transparent);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -20px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--primary-gold);
+    border: 3px solid var(--bg-dark);
+    box-shadow: 0 0 10px var(--primary-gold);
+}
+
+.timeline-content {
+    background: var(--bg-dark-card);
+    border: 1px solid rgba(223, 193, 123, 0.2);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-left: 15px;
+}
+
+.timeline-date {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--primary-gold);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.timeline-title {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    color: var(--text-light);
+    margin: 0.2rem 0 0.5rem;
+}
+
+.timeline-text {
+    font-size: 0.88rem;
+    color: var(--text-light-muted);
+    line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   15. SECTION 11: KIRIM HADIAH
+   -------------------------------------------------------------------------- */
+.section-hadiah {
+    padding: 5rem 1.5rem;
+    text-align: center;
+}
+
+.hadiah-desc {
+    max-width: 550px;
+    margin: 0 auto 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-light-muted);
+}
+
+.bank-card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.bank-card {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border: 1px solid rgba(223, 193, 123, 0.4);
+    border-radius: 16px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 360px;
+    text-align: left;
+    box-shadow: var(--shadow-card);
+    position: relative;
+}
+
+.bank-logo {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    color: var(--primary-gold-light);
+    margin-bottom: 1.5rem;
+}
+
+.bank-chip {
+    font-size: 2.2rem;
+    color: var(--primary-gold);
+    margin-bottom: 1rem;
+}
+
+.bank-number {
+    font-family: monospace;
+    font-size: 1.4rem;
+    letter-spacing: 0.15em;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.bank-holder {
+    font-size: 0.8rem;
+    color: var(--text-light-muted);
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.bank-holder strong {
+    font-size: 1rem;
+    color: var(--primary-gold-light);
+}
+
+.btn-copy {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--gold-gradient);
+    color: #111622;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.btn-copy:hover {
+    transform: translateY(-2px);
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid var(--primary-gold);
+    color: var(--primary-gold-light);
+    padding: 0.8rem 1.6rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    z-index: 2000;
+    opacity: 0;
+    transition: all 0.4s var(--transition-smooth);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   16. SECTION 12: CLOSING
+   -------------------------------------------------------------------------- */
+.section-closing {
+    position: relative;
+    padding: 6rem 1.5rem 4rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.closing-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('../asset/images/cover.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.closing-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 15, 25, 0.9);
+    z-index: 2;
+}
+
+.closing-content {
+    position: relative;
+    z-index: 10;
+    max-width: 600px;
+}
+
+.closing-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-light-muted);
+    margin-bottom: 1.5rem;
+}
+
+.closing-thanks {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--primary-gold-light);
+    margin-bottom: 2.5rem;
+}
+
+.closing-signature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+}
+
+.sig-groom, .sig-bride {
+    font-family: var(--font-script);
+    font-size: 3.2rem;
+    color: var(--primary-gold-light);
+}
+
+.sig-amp {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--primary-gold);
+}
+
+.copyright {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.05em;
+}
+
+/* --------------------------------------------------------------------------
+   17. SCROLL REVEAL ANIMATIONS
+   -------------------------------------------------------------------------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s var(--transition-smooth), transform 1s var(--transition-smooth);
+}
+
+.reveal.slide-left {
+    transform: translateX(-60px);
+}
+
+.reveal.slide-right {
+    transform: translateX(60px);
+}
+
+.reveal.zoom-in {
+    transform: scale(0.85);
+}
+
+.reveal.zoom-out {
+    transform: scale(1.15);
+}
+
+.reveal.rotate-in {
+    transform: rotate(-5deg) scale(0.9);
+}
+
+.reveal.fade-up {
+    transform: translateY(50px);
+}
+
+.reveal.fade-down {
+    transform: translateY(-50px);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(0);
+}
+
+/* Stagger delays for child elements */
+.reveal.stagger > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+}
+
+.reveal.stagger.active > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal.stagger > *:nth-child(1) { transition-delay: 0.1s; }
+.reveal.stagger > *:nth-child(2) { transition-delay: 0.2s; }
+.reveal.stagger > *:nth-child(3) { transition-delay: 0.3s; }
+.reveal.stagger > *:nth-child(4) { transition-delay: 0.4s; }
+.reveal.stagger > *:nth-child(5) { transition-delay: 0.5s; }
+.reveal.stagger > *:nth-child(6) { transition-delay: 0.6s; }
+
+/* Image specific animations */
+.reveal-img {
+    opacity: 0;
+    transform: scale(1.1) translateY(20px);
+    transition: opacity 1.2s var(--transition-smooth), transform 1.2s var(--transition-smooth);
+}
+
+.reveal-img.active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.reveal-img.ken-burns {
+    animation: kenBurns 20s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.15) translate(2%, 2%); }
+}
+
+/* Text line-by-line reveal */
+.reveal-text .line {
+    opacity: 0;
+    transform: translateY(30px);
+    display: inline-block;
+    transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+}
+
+.reveal-text.active .line {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-text .line:nth-child(1) { transition-delay: 0.1s; }
+.reveal-text .line:nth-child(2) { transition-delay: 0.2s; }
+.reveal-text .line:nth-child(3) { transition-delay: 0.3s; }
+.reveal-text .line:nth-child(4) { transition-delay: 0.4s; }
+
+/* --------------------------------------------------------------------------
+   18. RESPONSIVE BREAKPOINTS (DESKTOP & TABLET)
+   -------------------------------------------------------------------------- */
+@media (min-width: 640px) {
+    .countdown-item {
+        width: 90px;
+        height: 95px;
+    }
+    
+    .countdown-value {
+        font-size: 2.2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .couple-names {
+        flex-direction: row;
+        gap: 0.75rem;
+    }
+
+    .name-groom, .name-bride {
+        font-size: 3.8rem;
+    }
+
+    .ampersand {
+        font-size: 3.5rem;
+        margin: 0;
+    }
+
+    .mempelai-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .mempelai-grid.reverse {
+        grid-template-row: 1;
+    }
+
+    .groom-block .mempelai-info {
+        text-align: left;
+    }
+
+    .bride-block .mempelai-info {
+        text-align: right;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .timeline {
+        padding-left: 0;
+    }
+
+    .timeline::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-item {
+        width: 50%;
+        padding-right: 30px;
+    }
+
+    .timeline-item:nth-child(even) {
+        margin-left: 50%;
+        padding-right: 0;
+        padding-left: 30px;
+    }
+
+    .timeline-dot {
+        left: auto;
+        right: -7px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+        right: auto;
+        left: -7px;
+    }
+
+    .timeline-content {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section-title {
+        font-size: 2.6rem;
+    }
+
+    .hero-names {
+        font-size: 5rem;
+    }
+}
