@@ -17,7 +17,7 @@ const CONFIG = {
     bankInfo: {
         bankName: "SEABANK",
         accountNumber: "901150848441",
-        accountName: "Nina Prihatini"
+        accountName: "Yasa dan Nina"
     }
 };
 
